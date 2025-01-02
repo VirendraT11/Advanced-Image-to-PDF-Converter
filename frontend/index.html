@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image-to-pdf</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-file-pdf"></i>Advanced Image to PDF Converter</h1>
+            <p>Covert and optimize your images with professional tools</p>
+        </header>
+        <main>
+            <div class="upload-container">
+                <div id="drop-zone" class="drop-zone">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & Drop images here or</p>
+                    <button id="select-files">Select Files</button>
+                    <input type="file" id="file-input" multiple accept="image/*" hidden>
+                </div>
+                <div class="features-container">
+                    <div class="feature-optons">
+                        <h3>Advanced Options</h3>
+                        <div class="option">
+                            <label>
+                                <input type="checkbox" id="optimize-images">
+                                Optimize images before conversion
+                            </label>
+                        </div>
+                        <div class="option">
+                            <label>
+                                <input type="checkbox" id="auto-arrange">
+                                Auto-arrange by aspect ratio
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div id="preview-container" class="preview-container hidden">
+                    <h3>Selected Images <span id="image-count">(0)</span></h3>
+                    <div id="image-preview" class="image-preview"></div>
+                    <div class="buttons-container">
+                        <button id="convert-btn" class="primary-btn" disabled>
+                            <i class="fas fa-cog"></i>Convert to PDF
+                        </button>
+                        <button id="optimize-Btn" class="secondary-btn" disabled>
+                            <i class="fas fa-compress-arrows-alt"></i>Optimize Images
+                        </button>
+                        <button id="clear-btn" class="danger-btn" disabled>
+                            <i class="fas fa-trash"></i>Clear All
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="progress-container" class="progress-container hidden">
+                <div class="progress-bar">
+                    <div id="progress" class="progress"></div>
+                </div>
+                <p id="progress-text">Progressing...</p>
+            </div>
+        </main>
+        <div id="toast" class="toast"></div>
+    </div>
+    <footer>
+        <p>Created with <i class="fas fa-heart"></i> by Virendra Tambavekar | Features: Image Optimization, Batch Processing, Drag & Drop</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
